@@ -1,7 +1,10 @@
-// 🌐 RenderにデプロイしているBotのURL
+// 🌐 わどぼっとAPI
 const API_URL = 'https://wado.onrender.com/status';
 
-// 🟢 Botステータス更新処理
+// 🌐 Discord Guild Widget JSON API
+const GUILD_API = 'https://discord.com/api/guilds/1424339482873696288/widget.json';
+
+// 🟢 Botステータス更新
 async function updateStatus() {
   const statusText = document.getElementById('status-text');
 
@@ -16,15 +19,31 @@ async function updateStatus() {
       statusText.textContent = '🔴 オフライン';
       statusText.className = 'status-offline';
     }
-  } catch (err) {
+  } catch {
     statusText.textContent = '⚪️ 接続エラー';
     statusText.className = 'status-offline';
   }
 }
 
-// 3秒ごとに更新
+// 🧩 サーバー情報更新
+async function updateGuildInfo() {
+  try {
+    const res = await fetch(GUILD_API);
+    const data = await res.json();
+
+    document.getElementById('guild-name').textContent = `サーバー名: ${data.name}`;
+    document.getElementById('guild-members').textContent = `メンバー数: ${data.members.length}`;
+    document.getElementById('guild-online').textContent = `オンライン: ${data.presence_count}`;
+  } catch (err) {
+    document.getElementById('guild-name').textContent = 'サーバー情報を取得できませんでした。';
+    console.error('Guild fetch error:', err);
+  }
+}
+
+// ⏰ 定期更新
 setInterval(updateStatus, 3000);
 updateStatus();
+updateGuildInfo();
 
 // 🎨 ページフェードイン
 window.addEventListener('DOMContentLoaded', () => {
