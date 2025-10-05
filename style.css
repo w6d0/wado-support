@@ -1,0 +1,76 @@
+:root {
+  --main-color: #ff8c42;
+  --accent-color: #ffa45b;
+  --bg-color: #fffaf5;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+.hero h2 {
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: var(--main-color);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+}
+
+.info, .admin {
+  margin-top: 3rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.info h3, .admin h3 {
+  color: var(--main-color);
+}
+
+footer {
+  background: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
