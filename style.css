@@ -3,6 +3,7 @@
   --accent-color: #ffa45b;
   --bg-color: #fffaf5;
   --text-color: #333;
+  --shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 body {
@@ -10,34 +11,37 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
+/* ヘッダー */
 header {
   background: linear-gradient(135deg, var(--main-color), var(--accent-color));
   color: white;
   text-align: center;
   padding: 2rem 1rem;
+  font-size: 1.8rem;
+  box-shadow: var(--shadow);
 }
 
+/* メイン */
 main {
   padding: 2rem;
   text-align: center;
 }
 
-.hero {
-  margin-top: 1rem;
-  padding: 2rem 1rem;
+/* セクション（白カード風） */
+section {
+  margin: 2rem auto;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: inline-block;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  max-width: 600px;
 }
 
-.hero h2 {
-  color: var(--main-color);
-  font-size: 1.8rem;
-}
-
+/* ボタン */
 .btn {
   display: inline-block;
   margin-top: 1.5rem;
@@ -49,11 +53,11 @@ main {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .btn:hover {
   background: var(--accent-color);
 }
 
+/* ステータス表示 */
 .status-box {
   margin-top: 1.5rem;
   padding: 0.8rem;
@@ -61,29 +65,30 @@ main {
   display: inline-block;
   font-weight: bold;
   background: #fff;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
 }
 
 .status-online {
-  color: #2ecc71;
+  color: #2ecc71; /* 緑 */
 }
 
 .status-offline {
-  color: #e74c3c;
+  color: #e74c3c; /* 赤 */
 }
 
-.info, .admin {
-  margin-top: 3rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  padding: 2rem;
-}
-
-.info h3, .admin h3 {
+/* 管理者情報 */
+.admin h3 {
   color: var(--main-color);
 }
 
+/* Discordウィジェット */
+.widget iframe {
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* フッター */
 footer {
   background: var(--main-color);
   color: white;
@@ -91,24 +96,5 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
   font-size: 0.9rem;
-}
-.guild-info {
-  margin-top: 3rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  padding: 2rem;
-}
-
-.guild-info h3 {
-  color: var(--main-color);
-}
-
-.widget {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.widget h3 {
-  color: var(--main-color);
+  box-shadow: var(--shadow);
 }
