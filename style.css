@@ -54,6 +54,24 @@ main {
   background: var(--accent-color);
 }
 
+.status-box {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.status-online {
+  color: #2ecc71;
+}
+
+.status-offline {
+  color: #e74c3c;
+}
+
 .info, .admin {
   margin-top: 3rem;
   background: white;
