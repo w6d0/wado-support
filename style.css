@@ -3,16 +3,18 @@
   --accent-color: #ffa45b;
   --bg-color: #fffaf5;
   --text-color: #333;
-  --shadow: 0 3px 8px rgba(0,0,0,0.1);
+  --shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 全体 */
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Noto Sans JP', 'Segoe UI', Roboto, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   opacity: 1;
   transition: opacity 1s ease;
+  line-height: 1.7;
 }
 
 /* ヘッダー */
@@ -21,24 +23,33 @@ header {
   color: white;
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   box-shadow: var(--shadow);
 }
 
 /* メイン */
 main {
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* セクション（白カード風） */
+/* 各セクションカード風 */
 section {
   margin: 2rem auto;
   background: white;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  padding: 2rem;
-  max-width: 600px;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section h2,
+section h3 {
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
 }
 
 /* ボタン */
@@ -47,38 +58,34 @@ section {
   margin-top: 1.5rem;
   background: var(--main-color);
   color: white;
-  padding: 0.8rem 1.8rem;
-  border-radius: 5px;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
   transition: 0.3s;
 }
 .btn:hover {
   background: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 /* ステータス表示 */
 .status-box {
   margin-top: 1.5rem;
   padding: 0.8rem;
-  border-radius: 5px;
+  border-radius: 6px;
   display: inline-block;
   font-weight: bold;
   background: #fff;
   box-shadow: var(--shadow);
+  font-size: clamp(1rem, 3vw, 1.2rem);
 }
-
 .status-online {
   color: #2ecc71; /* 緑 */
 }
-
 .status-offline {
   color: #e74c3c; /* 赤 */
-}
-
-/* 管理者情報 */
-.admin h3 {
-  color: var(--main-color);
 }
 
 /* Discordウィジェット */
@@ -86,6 +93,15 @@ section {
   margin-top: 1rem;
   border-radius: 10px;
   box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 350px;
+  height: 500px;
+}
+
+/* 管理者情報 */
+.admin p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 /* フッター */
@@ -97,4 +113,43 @@ footer {
   margin-top: 3rem;
   font-size: 0.9rem;
   box-shadow: var(--shadow);
+}
+
+/* ============================= */
+/* 📱 スマホ・タブレット対応     */
+/* ============================= */
+
+/* スマホ (幅600px以下) */
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .btn {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .widget iframe {
+    height: 400px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* タブレット (幅900px以下) */
+@media (max-width: 900px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
