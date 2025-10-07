@@ -5,38 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>わどぼっと サポートサイト</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>わどぼっと サポート</h1>
+    <h1>✨ わどぼっと サポートセンター</h1>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero fade-in">
       <h2>ようこそ！</h2>
       <p>わどぼっとのサポートサイトへようこそ。</p>
       <p>不具合報告・質問などは公式Discordサーバーからお願いします。</p>
 
-      <div id="bot-status" class="status-box">
-        <p>接続状況: <span id="status-text">読み込み中...</span></p>
+      <div id="bot-status" class="status-box pulse">
+        <p>接続状況：</p>
+        <span id="status-text">読み込み中...</span>
       </div>
 
-      <a href="https://discord.gg/4M8MePbFJw" target="_blank" class="btn">🎯 サポートサーバーに参加</a>
+      <a href="https://discord.gg/4M8MePbFJw" target="_blank" class="btn glow">🎯 サポートサーバーに参加</a>
     </section>
 
-    <!-- 🧩 Discord公式ウィジェット -->
-    <section class="widget">
-      <h3>💬 Discordウィジェット</h3>
-      <iframe src="https://discord.com/widget?id=1424339482873696288&theme=dark"
-        width="350"
-        height="500"
-        allowtransparency="true"
-        frameborder="0"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-      </iframe>
+    <!-- 💬 Discordオンラインメンバー -->
+    <section class="widget fade-up">
+      <h3>🟢 現在のオンラインメンバー</h3>
+      <ul id="online-members" class="member-list">読み込み中...</ul>
     </section>
 
-    <section class="admin">
+    <section class="admin fade-up">
       <h3>👑 管理者情報</h3>
       <p>開発・運営：<strong>わど（ID: w6d0）</strong></p>
     </section>
