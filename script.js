@@ -1,6 +1,6 @@
 // 🌐 わどぼっとAPI
 const BOT_API_URL = 'https://wado.onrender.com/status';
-const GUILD_WIDGET_URL = 'https://discord.com/api/guilds/1424339482873696288/widget.json';
+const GUILD_WIDGET_URL = 'https://discord.com/api/guilds/1428771913530081323/widget.json';
 
 // 🟢 Botステータス更新
 async function updateStatus() {
